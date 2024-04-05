@@ -122,3 +122,36 @@
     flex-direction: column;
   }
 }
+
+.recommendationsTitle {
+  text-align: center;
+  margin-top: 2rem;
+  color: #3b3314; 
+}
+
+.recommendationsSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; 
+  padding: 20px 0;
+}
+
+.smoothieCard {
+  background-color: #fff; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+  border-radius: 8px; 
+  padding: 20px;
+  width: 300px; 
+  text-align: center; 
+}
+
+.smoothieName {
+  color: #333;
+  margin: 0 0 10px 0; 
+}
+
+.smoothieDescription {
+  color: #666; 
+  font-size: 0.9rem; 
+}

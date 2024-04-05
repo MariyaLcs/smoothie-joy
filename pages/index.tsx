@@ -2,8 +2,18 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 import smoothieDetails from './api/smoothieDetails'
+import { GetServerSideProps } from 'next';
 
-export default function Home ()
+type HomeProps = {
+  recommendations: {
+    id: string;
+    name: string;
+    description: string;
+  }[];
+};
+
+
+export default function Home ({ recommendations }: HomeProps)
 {
   return (
     <div className={ styles.container }>
@@ -18,9 +28,7 @@ export default function Home ()
           10 Ready-to-Blend Smoothie Packs
         </h1>
 
-        <p className={ styles.description }>
-          Get started by editing <code className={ styles.code }>pages/index.js</code>
-        </p>
+
 
         <div className={ styles.grid }>
           { smoothieDetails.map((smoothie) => (
@@ -30,7 +38,36 @@ export default function Home ()
           )) }
 
         </div>
+        <h2 className={ styles.recommendationsTitle }>Your Personalized Recommendations</h2>
+        { recommendations && Array.isArray(recommendations) && (
+          <section className={ styles.recommendationsSection }>
+            { recommendations.map((smoothie) => (
+              <div key={ smoothie.id } className={ styles.smoothieCard }>
+                <h3 className={ styles.smoothieName }>{ smoothie.name }</h3>
+                <p className={ styles.smoothieDescription }>{ smoothie.description }</p>
+              </div>
+            )) }
+          </section>
+        ) }
+
       </main>
     </div>
   );
 }
+
+// This function runs on the server for each request
+export const getServerSideProps: GetServerSideProps = async (context) =>
+{
+  // Simulate fetching data based on user session, query parameters, etc.
+  // For demonstration, we're returning static data
+  const recommendations = [
+    { id: '1', name: 'Tropical Morning', description: 'A refreshing blend of mango, pineapple, and coconut milk.' },
+    // Add more recommendations as needed
+  ];
+
+  return {
+    props: { // These props will be passed to the page component
+      recommendations,
+    },
+  };
+};
