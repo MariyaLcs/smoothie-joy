@@ -14,7 +14,7 @@ export default function Home ()
 
       <main className={ styles.main }>
         <h1 className={ styles.title }>
-          Welcome to my Elearning site
+          10 Ready-to-Blend Smoothie Packs
         </h1>
 
         <p className={ styles.description }>
@@ -22,21 +22,48 @@ export default function Home ()
         </p>
 
         <div className={ styles.grid }>
-          <Link href="/learn/nextjs" className={ styles.card }>
-            <h2>Learn NextJS &rarr;</h2>
+
+
+          <Link href="/smoothie/raspberry-rush" className={ styles.card }>
+            <h2>Raspberry Rush &rarr;</h2>
           </Link>
 
-          <Link href="/learn/react" className={ styles.card }>
-            <h2>Learn React &rarr;</h2>
+          <Link href="/smoothie/peachy-green-tea" className={ styles.card }>
+            <h2>Peachy Green Tea &rarr;</h2>
           </Link>
 
-          <Link href="/learn/angular" className={ styles.card }>
-            <h2>Learn Angular &rarr;</h2>
+          <Link href="/smoothie/tropical-turmeric-twist" className={ styles.card }>
+            <h2>Tropical Turmeric Twist &rarr;</h2>
           </Link>
 
-          <Link href="/learn/vue" className={ styles.card }>
-            <h2>Learn Vue &rarr;</h2>
+          <Link href="/smoothie/berry-beet-bliss" className={ styles.card }>
+            <h2>Berry Beet Bliss &rarr;</h2>
           </Link>
+
+          <Link href="/smoothie/ginger-snap-greens" className={ styles.card }>
+            <h2>Ginger Snap Greens &rarr;</h2>
+          </Link>
+
+          <Link href="/smoothie/citrus-sunrise" className={ styles.card }>
+            <h2>Citrus Sunrise &rarr;</h2>
+          </Link>
+
+          <Link href="/smoothie/pomegranate-punch" className={ styles.card }>
+            <h2>Pomegranate Punch &rarr;</h2>
+          </Link>
+
+          <Link href="/smoothie/chocolate-cherry-chia" className={ styles.card }>
+            <h2>Chocolate Cherry Chia &rarr;</h2>
+          </Link>
+
+          <Link href="/smoothie/vanilla-almond-dream" className={ styles.card }>
+            <h2>Vanilla Almond Dream &rarr;</h2>
+          </Link>
+
+          <Link href="/smoothie/cinnamon-apple-pie" className={ styles.card }>
+            <h2>Cinnamon Apple Pie &rarr;</h2>
+          </Link>
+
         </div>
       </main>
     </div>
