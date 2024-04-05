@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
+import smoothieDetails from './api/smoothieDetails'
 
 export default function Home ()
 {
@@ -22,47 +23,11 @@ export default function Home ()
         </p>
 
         <div className={ styles.grid }>
-
-
-          <Link href="/smoothie/raspberry-rush" className={ styles.card }>
-            <h2>Raspberry Rush &rarr;</h2>
-          </Link>
-
-          <Link href="/smoothie/peachy-green-tea" className={ styles.card }>
-            <h2>Peachy Green Tea &rarr;</h2>
-          </Link>
-
-          <Link href="/smoothie/tropical-turmeric-twist" className={ styles.card }>
-            <h2>Tropical Turmeric Twist &rarr;</h2>
-          </Link>
-
-          <Link href="/smoothie/berry-beet-bliss" className={ styles.card }>
-            <h2>Berry Beet Bliss &rarr;</h2>
-          </Link>
-
-          <Link href="/smoothie/ginger-snap-greens" className={ styles.card }>
-            <h2>Ginger Snap Greens &rarr;</h2>
-          </Link>
-
-          <Link href="/smoothie/citrus-sunrise" className={ styles.card }>
-            <h2>Citrus Sunrise &rarr;</h2>
-          </Link>
-
-          <Link href="/smoothie/pomegranate-punch" className={ styles.card }>
-            <h2>Pomegranate Punch &rarr;</h2>
-          </Link>
-
-          <Link href="/smoothie/chocolate-cherry-chia" className={ styles.card }>
-            <h2>Chocolate Cherry Chia &rarr;</h2>
-          </Link>
-
-          <Link href="/smoothie/vanilla-almond-dream" className={ styles.card }>
-            <h2>Vanilla Almond Dream &rarr;</h2>
-          </Link>
-
-          <Link href="/smoothie/cinnamon-apple-pie" className={ styles.card }>
-            <h2>Cinnamon Apple Pie &rarr;</h2>
-          </Link>
+          { smoothieDetails.map((smoothie) => (
+            <Link href={ `/smoothie/${smoothie.id}` } key={ smoothie.id } className={ styles.card }>
+              <h2>{ smoothie.name } &rarr;</h2>
+            </Link>
+          )) }
 
         </div>
       </main>
