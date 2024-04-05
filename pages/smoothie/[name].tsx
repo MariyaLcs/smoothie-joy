@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import smoothieDetails from '../api/smoothieDetails';
 import styles from '../../styles/LearnNext.module.css';
@@ -49,7 +50,13 @@ const SmoothiePage = ({ smoothie, imageUrl }: SmoothieProps) =>
         <div className={ styles.container }>
             <a href="#" onClick={ () => router.back() } className={ styles.backButton }>Back</a>
             <h1 className={ styles.title }>Get tips on how to make { smoothie.name }</h1>
-            <img src={ imageUrl } alt={ smoothie.name } className={ styles.smoothieImage } />
+            <Image
+                src={ imageUrl }
+                alt={ smoothie.name }
+                width={ 600 }
+                height={ 400 }
+                className={ styles.smoothieImage }
+            />
             <h2 className={ styles.subTitle }>Ingredients:</h2>
             <p className={ styles.ingredients }>{ smoothie.ingredients }</p>
         </div>
