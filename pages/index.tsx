@@ -58,7 +58,7 @@ export default function Home ({ recommendations }: HomeProps)
 }
 
 // This function runs on the server for each request
-export const getServerSideProps: GetServerSideProps = async (context) =>
+export const getStaticProps: GetServerSideProps = async (context) =>
 {
 
   const recommendations = [
