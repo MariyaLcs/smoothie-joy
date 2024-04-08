@@ -1,6 +1,7 @@
 {
   "name": "my-next-app",
   "version": "0.1.0",
+  "homepage": "https://mariyalcs.github.io/smoothie-joy/",
   "private": true,
   "scripts": {
     "dev": "next dev",
