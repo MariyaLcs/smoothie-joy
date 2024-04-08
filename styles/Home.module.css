@@ -8,29 +8,13 @@
 }
 
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
+  min-height: 80vh;
+  padding: 1rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
 }
 
 .title a {
@@ -47,7 +31,8 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .title,
@@ -87,10 +72,10 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-  background-image: url('/card.png'); 
-  background-size: cover;
-  background-position: center;
+  max-width: 250px;
+  background-color: #fff; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+  border-radius: 8px; 
 }
 
 .card:hover,
@@ -102,12 +87,12 @@
 
 .card h2 {
   margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .card p {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -127,6 +112,9 @@
   text-align: center;
   margin-top: 2rem;
   color: #3b3314; 
+}
+.smoothieCard p{
+  color: #0070f3;
 }
 
 .recommendationsSection {

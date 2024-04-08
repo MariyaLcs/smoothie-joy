@@ -34,23 +34,25 @@ export default function Home ({ recommendations }: HomeProps)
           { smoothieDetails.map((smoothie) => (
             <Link href={ `/smoothie/${smoothie.id}` } key={ smoothie.id } className={ styles.card }>
               <h2>{ smoothie.name } &rarr;</h2>
+              <p className={ styles.smoothieDescription }>{ smoothie.ingredients }</p>
             </Link>
           )) }
 
         </div>
-        <h2 className={ styles.recommendationsTitle }>Your Personalized Recommendations</h2>
-        { recommendations && Array.isArray(recommendations) && (
-          <section className={ styles.recommendationsSection }>
-            { recommendations.map((smoothie) => (
-              <div key={ smoothie.id } className={ styles.smoothieCard }>
-                <h3 className={ styles.smoothieName }>{ smoothie.name }</h3>
-                <p className={ styles.smoothieDescription }>{ smoothie.description }</p>
-              </div>
-            )) }
-          </section>
-        ) }
-
       </main>
+      <h2 className={ styles.recommendationsTitle }>Your Personalized Recommendations</h2>
+      { recommendations && Array.isArray(recommendations) && (
+        <section className={ styles.recommendationsSection }>
+          { recommendations.map((smoothie) => (
+            <div key={ smoothie.id } className={ styles.smoothieCard }>
+              <h3 className={ styles.smoothieName }>{ smoothie.name }</h3>
+              <p className={ styles.smoothieDescription }>{ smoothie.description }</p>
+            </div>
+          )) }
+        </section>
+      ) }
+
+
     </div>
   );
 }
@@ -58,12 +60,20 @@ export default function Home ({ recommendations }: HomeProps)
 // This function runs on the server for each request
 export const getServerSideProps: GetServerSideProps = async (context) =>
 {
-  // Simulate fetching data based on user session, query parameters, etc.
-  // For demonstration, we're returning static data
+
   const recommendations = [
-    { id: '1', name: 'Tropical Morning', description: 'A refreshing blend of mango, pineapple, and coconut milk.' },
-    // Add more recommendations as needed
+    {
+      id: '1',
+      name: 'Tropical Morning',
+      description: 'A refreshing blend of mango, pineapple, and coconut milk.'
+    },
+    {
+      id: '2',
+      name: 'Berry Blast',
+      description: 'A vibrant mix of strawberries, blueberries, and raspberries, blended to perfection.'
+    },
   ];
+
 
   return {
     props: { // These props will be passed to the page component
